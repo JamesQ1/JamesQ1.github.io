@@ -19,15 +19,15 @@
 ]]></content>
   </entry>
   <entry>
-    <title>测试文章</title>
-    <url>/2023/07/10/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>这是一篇测试文档</p>
-<h2 id="Hello-this-is-James"><a href="#Hello-this-is-James" class="headerlink" title="Hello, this is James"></a>Hello, this is James</h2>]]></content>
-  </entry>
-  <entry>
     <title>星期一</title>
     <url>/2023/07/17/%E6%98%9F%E6%9C%9F%E4%B8%80/</url>
     <content><![CDATA[<p>今天是星期一，终于开始了。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>测试文章</title>
+    <url>/2023/07/10/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>这是一篇测试文档</p>
+<h2 id="Hello-this-is-James"><a href="#Hello-this-is-James" class="headerlink" title="Hello, this is James"></a>Hello, this is James</h2>]]></content>
   </entry>
 </search>
