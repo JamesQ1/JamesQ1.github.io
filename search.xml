@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>浅谈23种设计模式</title>
+    <url>/2023/08/28/%E6%B5%85%E8%B0%88%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<p>所谓设计模式就是前人的一系列编程经验的总结，主要目的是尽可能的复用代码，增加代码的可扩展性和可维护性，由此带来的好处是降低开发风险和加速开发过程以及提高团队协作。</p>
+<p>大家编程的必经之路肯定是追求更高的代码质量，更快的开发速度，更低的开发风险；即使不用所谓的设计模式，大家也会主动思考如何编写代码，可以不断优化开发速度提高代码质量，即使不用设计模式，最终的目的也是殊途同归的。既然如此，前人们已经帮你总结了一套可复用的经验，学习应用一下就可以很好的提升开发优化代码，何乐而不为呢。</p>
+<span id="more"></span>
+<p>这里记录下了自己对每个开发模式的理解，尽量通俗简单，给自己留个记录，仅供大家参考。</p>
+<h3 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h3><h4 id="工厂方法-Factory-Method"><a href="#工厂方法-Factory-Method" class="headerlink" title="工厂方法 Factory Method:"></a>工厂方法 Factory Method:</h4><p>定义一个用于创建对象的接口，让子类决定实例化哪一个类。<br>目的是使创建对象和使用对象是分离的，并且客户端总是引用抽象工厂和抽象产品。<br><br>好处是一是解耦和扩展 二是采用工厂模式可以隐藏产品的创建细节，且有时可以直接返回缓存的产品而不是直接创造产品，从而提升速度并减少内存消耗。</p>
+<h4 id="抽象工厂-Abstract-Factory"><a href="#抽象工厂-Abstract-Factory" class="headerlink" title="抽象工厂 Abstract Factory:"></a>抽象工厂 Abstract Factory:</h4><p>可以简单理解为工厂的工厂，即不仅产品是抽象的，工厂也是抽象的；我们会先定义好相应的抽象工厂接口和抽象产品接口，然后<br>实现相应的实际工厂和实际产品即可。<br><br>它的目的是为了让创建工厂和一组产品使用相分离，并随后切换到另一个工厂和另一组产品。</p>
+<h4 id="生成器模式-Builder"><a href="#生成器模式-Builder" class="headerlink" title="生成器模式 Builder:"></a>生成器模式 Builder:</h4><p>将一个复杂对象的构建与它的表示相分离，使得同样的构建过程可以创建不同的表示。<br><br>例如 java 对象的 build 模式<br>它的好处是可以提供一个清晰的、可选的、链式的设置方法，以及强制属性的检查，以防止对象在初始化时出现不正确的状态。</p>
+<h4 id="原型模式-Prototype"><a href="#原型模式-Prototype" class="headerlink" title="原型模式 Prototype:"></a>原型模式 Prototype:</h4><p>指创建新对象的时候，根据现有的一个模型来创建。<br>例如定义一个 copy()方法。</p>
+<h4 id="单例模式-Singleton"><a href="#单例模式-Singleton" class="headerlink" title="单例模式 Singleton:"></a>单例模式 Singleton:</h4><p>定义很简单 保证类有且仅有一个实例<br>好处是 在需要资源共享的状况下使用单例避免资源的浪费和冲突 ；支持懒加载；可以用于全局配置；保证一致性等等。</p>
+<h3 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h3><h4 id="适配器模式-Adapter"><a href="#适配器模式-Adapter" class="headerlink" title="适配器模式 Adapter:"></a>适配器模式 Adapter:</h4><p>将一个类的接口转换成另一个接口，使得由于接口不兼容而不能一起工作的那些类可以一起工作。<br><br>适配器模式在 Java 标准库中有广泛的应用。比如 Arrays.asList()就相当于一个转换器(适配器)。</p>
+<h4 id="桥接模式-Bridge"><a href="#桥接模式-Bridge" class="headerlink" title="桥接模式 Bridge:"></a>桥接模式 Bridge:</h4><p>将抽象部分与它的实现部分分离，使它们都可以独立的变化。<br><br>主要借鉴它的思想：即不要过度使用继承，而是优先拆分某些组件，使用组合的方式来扩展功能。</p>
+<h4 id="组合模式-Composite"><a href="#组合模式-Composite" class="headerlink" title="组合模式 Composite:"></a>组合模式 Composite:</h4><p>将对象组合成树形结构以表示“部分-整体”的层次结构，使得用户对单个对象和组合对象的使用具有一致性。<br><br>使用组合模式时，先统一单个节点以及“容器”节点的接口 像文件夹和文件、GUI 窗口的各种组件，都是 Composite 模式的应用</p>
+<h4 id="装饰器模式-Decorator"><a href="#装饰器模式-Decorator" class="headerlink" title="装饰器模式 Decorator:"></a>装饰器模式 Decorator:</h4><p>动态的给一个对象添加一些额外的职责,比生成子类要更加灵活。<br><br>核心的功能可以派生子类，如果一些附加的辅助功能可以采用装饰器模式。</p>
+<h4 id="外观模式-Facade"><a href="#外观模式-Facade" class="headerlink" title="外观模式 Facade:"></a>外观模式 Facade:</h4><p>定义了一个高层接口，子系统中一系列接口通过这个高层接口统一暴露给外界。外观模式可以使得该子系统更容易的为外界所使用。<br><br>例如 Web 程序的 RestApiController，使得外部用户调用的时候，只关心 Facade 提供的接口，不用管具体是哪个子系统处理的。</p>
+<h4 id="享元模式-Flyweight"><a href="#享元模式-Flyweight" class="headerlink" title="享元模式 Flyweight:"></a>享元模式 Flyweight:</h4><p>运用共享技术有效的支持大量细粒度的对象。即不用反复创建相同的实例，直接向调用方返回一个共享的实例。<br><br>例如 Integer.valueOf()和 Byte.valueOf()方法 返回的实例，全部都是缓存对象。</p>
+<h4 id="代理模式-Proxy"><a href="#代理模式-Proxy" class="headerlink" title="代理模式 Proxy:"></a>代理模式 Proxy:</h4><p>为其他对象提供一种代理以控制对这个对象的访问。<br><br>通过代理模式 我们可以额外添加很多功能，例如鉴权，内置计数器, 动态伸缩管理连接等等。<br><br>它与装饰器 Decorator 模式很像，区别在于 Decorator 模式让调用者自己创建核心类，然后组合各种功能；而 Proxy 模式绝不能让调用者自己创建再组合，它让调用者认为获取到的是核心类接口，实际上是代理类。</p>
+<h3 id="行为型模式"><a href="#行为型模式" class="headerlink" title="行为型模式"></a>行为型模式</h3><h4 id="责任链模式-Chain-of-Responsibility"><a href="#责任链模式-Chain-of-Responsibility" class="headerlink" title="责任链模式 Chain of Responsibility:"></a>责任链模式 Chain of Responsibility:</h4><p>它是一种处理请求的模式，它让多个处理器都有机会处理该请求，直到其中某个处理成功为止。<br><br>责任链模式的好处是添加新的处理器或者重新排列处理器非常容易；它经常用在拦截、预处理请求等等。</p>
+<h4 id="命令模式-command"><a href="#命令模式-command" class="headerlink" title="命令模式 command:"></a>命令模式 command:</h4><p>不关心类内部如何具体执行，而是把各个方法封装成 command 接口（里面还可以增加 undo redo 即撤销、重做操作） ，它可以减少系统各组件的耦合度</p>
+<h4 id="解释器模式-Interpreter"><a href="#解释器模式-Interpreter" class="headerlink" title="解释器模式 Interpreter:"></a>解释器模式 Interpreter:</h4><p>例如各编程语言根据对应的正则表达式判断是否符合标准，就是一种解释器的应用。</p>
+<h4 id="迭代器模式-Iterator"><a href="#迭代器模式-Iterator" class="headerlink" title="迭代器模式 Iterator:"></a>迭代器模式 Iterator:</h4><p>提供一种方法顺序访问一个集合里的各个元素，而又不需要暴露该对象的内部表示。<br><br>例如 java 中的 iterator 就是一个实际应用。</p>
+<h4 id="中介模式-Mediator"><a href="#中介模式-Mediator" class="headerlink" title="中介模式 Mediator:"></a>中介模式 Mediator:</h4><p>引入一个新的类，作为中介的角色，来跟各个组件交互，这样原来的组件就不用互相通信。<br><br>它的好处是解耦降低了系统的复杂度，同时如果增组件的话，也只需要更改中介角色里面的逻辑即可。<br><br>中介 Mediator 模式经常用在有众多交互组件的 UI 上。</p>
+<h4 id="备忘录模式-Memento"><a href="#备忘录模式-Memento" class="headerlink" title="备忘录模式 Memento:"></a>备忘录模式 Memento:</h4><p>主要用于捕获一个对象的内部状态，以便在将来某个时候法恢复此状态。<br><br>最简单的备忘录模式就是保存到文件，打开文件。Java 的序列化也可以看成是备忘录模式。</p>
+<h4 id="观察者模式-Observer"><a href="#观察者模式-Observer" class="headerlink" title="观察者模式 Observer:"></a>观察者模式 Observer:</h4><p>又称为发布-订阅者模式。它是一种通知机制，让发送通知的一方和接受通知的一方能彼此分离，互不影响。</p>
+<h4 id="状态模式-State"><a href="#状态模式-State" class="headerlink" title="状态模式 State:"></a>状态模式 State:</h4><p>当一个对象在其内部状态改变时改变它的行为。例如 QQ 聊天的几种状态，根据不同的状态对应不同的行为，然后关键在于状态切换，引入一个新的类完成状态切换（具体例如可以根据输入参数 去对应各个不同的状态类）。</p>
+<h4 id="策略模式-Strategy"><a href="#策略模式-Strategy" class="headerlink" title="策略模式 Strategy:"></a>策略模式 Strategy:</h4><p>定义一组算法，并把其封装到一个对象中。然后在运行时，可以灵活的使用其中一个算法。<br><br>例如大小写排序，调用 String::compareToIgnoreCase，但如何比较是我们自己决定的（例如按首字母）。<br><br>这样，传入不同的策略，即可获得不同的结果，大大增加了系统的灵活性。</p>
+<h4 id="模板方法-Template-Method"><a href="#模板方法-Template-Method" class="headerlink" title="模板方法 Template Method:"></a>模板方法 Template Method:</h4><p>定义一个操作的一系列步骤，对于某些暂时确定不下来的步骤，就留给子类实现好了。<br><br>简而言之，父类定义骨架，子类实现某些细节。</p>
+<h4 id="访问者模式-Visitor"><a href="#访问者模式-Visitor" class="headerlink" title="访问者模式 Visitor:"></a>访问者模式 Visitor:</h4><p>核心是为了访问比较复杂的数据结构，不去改变数据结构，而是把数据的操作抽象出来，生成一个访问者对象，然后处理对应的逻辑。之后，将访问者对象作为参数传给对应的调用方，即完成访问行为。<br><br>如果要新增一组操作，那么只需要增加一个新的访问者。<br><br>其中，将访问者对象作为参数传给对应的调用方这一过程也称之为函数回调。</p>
+]]></content>
+      <tags>
+        <tag>study</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试文章</title>
+    <url>/2023/07/10/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>这是一篇测试文档</p>
+<h2 id="Hello-this-is-James"><a href="#Hello-this-is-James" class="headerlink" title="Hello, this is James"></a>Hello, this is James</h2>]]></content>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2023/07/09/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -17,11 +58,5 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>测试文章</title>
-    <url>/2023/07/10/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>这是一篇测试文档</p>
-<h2 id="Hello-this-is-James"><a href="#Hello-this-is-James" class="headerlink" title="Hello, this is James"></a>Hello, this is James</h2>]]></content>
   </entry>
 </search>
